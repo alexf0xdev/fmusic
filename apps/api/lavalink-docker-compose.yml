@@ -1,0 +1,17 @@
+services:
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:latest
+    container_name: lavalink
+    restart: always
+    environment:
+      - _JAVA_OPTIONS=-Xmx2G
+    ports:
+      - '127.0.0.1:2323:2323'
+    volumes:
+      - ./application.yml:/opt/Lavalink/application.yml
+      - ./plugins/:/opt/Lavalink/plugins/
+    networks:
+      - fmusic-discord-bot
+networks:
+  fmusic-discord-bot:
+    external: true

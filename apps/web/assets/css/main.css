@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  @apply antialiased bg-neutral-900 text-white text-lg;
+}

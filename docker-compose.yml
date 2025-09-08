@@ -1,0 +1,23 @@
+services:
+  server:
+    container_name: fmusic-discord-bot
+    image: ghcr.io/alexf0xdev/fmusic-server:latest
+    restart: always
+    environment:
+      BOT_TOKEN: "<BOT_TOKEN>"
+      BOT_VOLUME: 40
+      LAVALINK_IDS: "<LAVALINK_ID1;LAVALINK_ID2>"
+      LAVALINK_HOSTS: "<LAVALINK_HOST1;LAVALINK_HOST2>"
+      LAVALINK_PORTS: "<LAVALINK_PORT1;LAVALINK_PORT2>"
+      LAVALINK_PASSWORDS: "<LAVALINK_PASSWORD1;LAVALINK_PASSWORD2>"
+    networks:
+      - fmusic-discord-bot
+  web:
+    container_name: fmusic-discord-bot
+    image: ghcr.io/alexf0xdev/fmusic-web:latest
+    restart: always
+    networks:
+      - fmusic-discord-bot
+networks:
+  fmusic-discord-bot:
+    name: fmusic-discord-bot
