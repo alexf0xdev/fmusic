@@ -18,8 +18,8 @@ import Commands from './commands';
           IntentsBitField.Flags.GuildVoiceStates,
         ],
         development:
-          configService.getOrThrow<string>('NODE_ENV', 'development') === 'development'
-            ? [configService.getOrThrow<string>('BOT_DEV_GUILD_ID')]
+          configService.get<string>('NODE_ENV', 'development') === 'development'
+            ? [configService.get<string>('BOT_DEV_GUILD_ID')]
             : false,
         presence: {
           activities: [{ name: '/help', type: ActivityType.Listening }],
@@ -41,6 +41,7 @@ import Commands from './commands';
             host: hosts[index],
             port: +ports[index],
             authorization: passwords[index],
+            secure: true,
           })),
         };
       },

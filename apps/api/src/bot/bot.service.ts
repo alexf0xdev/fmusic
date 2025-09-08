@@ -69,7 +69,7 @@ export class BotService {
   }
 
   @OnLavalinkManager('queueEnd')
-  async onQueueEnd(@Context() [player]: LavalinkManagerContextOf<'queueEnd'>) {
+  onQueueEnd(@Context() [player]: LavalinkManagerContextOf<'queueEnd'>) {
     const timeout = this.timeouts.get(player.guildId);
 
     if (timeout) this.timeouts.delete(player.guildId);

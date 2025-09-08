@@ -1,5 +1,5 @@
 {
-  "name": "@fmusic/website",
+  "name": "@fmusic/web",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -8,17 +8,16 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "lint": "eslint .",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/content": "3.6.1",
-    "@nuxt/eslint": "1.4.1",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "1.14.0",
     "@nuxt/image": "1.10.0",
     "@tailwindcss/vite": "^4.1.10",
     "better-sqlite3": "^12.0.0",
-    "eslint": "^9.29.0",
     "nuxt": "^3.17.5",
     "tailwindcss": "^4.1.10",
     "vue": "^3.5.16",
@@ -26,6 +25,9 @@
   },
   "devDependencies": {
     "@iconify-json/fa6-brands": "^1.2.5",
-    "@iconify-json/tabler": "^1.2.19"
+    "@iconify-json/tabler": "^1.2.19",
+    "@nuxt/eslint": "1.4.1",
+    "eslint": "^9.35.0",
+    "typescript": "^5.9.2"
   }
 }
